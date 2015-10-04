@@ -1,0 +1,9 @@
+[include]
+  path = ~/.gitconfig.local
+[core]
+	editor = vim
+[alias]
+	co = checkout
+	p = pull
+	s = status
+	b = branch
