@@ -29,3 +29,5 @@ for file in $files; do
   echo "Creating symlink to $file in home directory."
   ln -s $dir/$file ~/.$file
 done
+
+ln -sf $dir/bka.zsh-theme ~/.oh-my-zsh/themes/bka.zsh-theme
