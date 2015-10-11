@@ -5,5 +5,7 @@
 [alias]
 	co = checkout
 	p = pull
-	s = status
+	s = status -s
 	b = branch
+  l = log --pretty=oneline -n 20 --graph --abbrev-commit
+  la = log --oneline --graph --decorate --all
