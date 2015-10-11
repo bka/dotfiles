@@ -25,8 +25,8 @@ ZSH_THEME="ys"
 # DISABLE_LS_COLORS="true"
 
 # Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
+export DISABLE_AUTO_TITLE="true"
+export AUTO_TITLE=false
 # Uncomment the following line to enable command auto-correction.
 # ENABLE_CORRECTION="true"
 
@@ -88,6 +88,30 @@ if [ -f ~/.bash_aliases ]; then
      . ~/.bash_aliases
 fi
 
+case $- in *i*)
+    if [ -z "$TMUX" ]; then exec tmux; fi;;
+esac
+
 if [ -f $HOME/.rvm/scripts/rvm ]; then
     [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 fi
+
+function simplify_dir {
+    local PREFIX
+    if [[ $PWD == "$HOME"* ]]; then
+        PREFIX=${HOME%/}
+        echo "${PWD##"$PREFIX/"}"
+    else
+        echo "$PWD"
+    fi
+}
+
+settitle() {
+  printf "\033k$1\033\\"
+}
+chpwd() {
+  settitle "$(simplify_dir)"
+}
+precmd(){
+  settitle "$(simplify_dir)"
+}
