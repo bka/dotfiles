@@ -115,3 +115,10 @@ chpwd() {
 precmd(){
   settitle "$(simplify_dir)"
 }
+preexec(){
+  settitle "$(echo $1 | cut -d" " -f1)"
+}
+ssh() {
+    settitle "$*"
+    command ssh "$@"
+}
