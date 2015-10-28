@@ -14,7 +14,7 @@ use strict;
 use utf8;
 use Encode qw(encode);
 my $Repo          = Git->repository($ENV{"GIT_DIR"} || ".");
-my $Pretty_fmt    = "format:%s";
+my $Pretty_fmt    = "format:\e[1;94m[%h] \e[0m%s, \e[1;30m%an %ar";
 my $Reverse_order = 0;
 my $Show_all      = 0;
 my $Show_rebase   = 1;
