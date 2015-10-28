@@ -9,3 +9,4 @@
 	b = branch
   l = log --pretty=oneline -n 20 --graph --abbrev-commit
   la = log --oneline --graph --decorate --all
+  lf = diff-tree --no-commit-id --name-only -r

@@ -55,6 +55,10 @@ plugins=(git extract)
 # User configuration
 
 export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+# add some scripts
+export PATH=$HOME/dotfiles/bin:$PATH
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -84,7 +88,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# make END and POS0 work again
+# make END and POS1 work again
 
 # key bindings
 bindkey "\e[1~" beginning-of-line
@@ -150,3 +154,5 @@ ssh() {
     settitle "$*"
     command ssh "$@"
 }
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
