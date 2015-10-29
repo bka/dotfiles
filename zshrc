@@ -155,4 +155,32 @@ ssh() {
     command ssh "$@"
 }
 
+# Paste x CLIPBOARD
+function x-yank() {
+  if [[ "$(uname)" == "Linux" ]]; then
+    CUTBUFFER=$(xclip -o -selection clipboard)
+  elif [[ "$(uname)" == "Darwin" ]] ; then
+    CUTBUFFER=$(pbpaste)
+  fi
+  zle yank
+}
+zle -N x-yank
+
+# Ctrl-v: Insert the contents of the clipboard at the cursor
+bindkey '^v' x-yank
+
+# Kill region goes to CLIPBOARD
+function x-kill-region() {
+  zle kill-region
+  if [[ "$(uname)" == "Linux" ]]; then
+    print -rn $CUTBUFFER | xclip -i -selection clipboard
+  elif [[ "$(uname)" == "Darwin" ]] ; then
+    print -rn $CUTBUFFER | pbcopy
+  fi
+}
+zle -N x-kill-region
+
+# Ctrl-o: Deletes everything after cursor
+bindkey '^x' x-kill-region
+
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
