@@ -9,4 +9,9 @@
 	b = branch
   l = log --pretty=oneline -n 20 --graph --abbrev-commit
   la = log --oneline --graph --decorate --all
+  # list files of commit
   lf = diff-tree --no-commit-id --name-only -r
+  # different commits in branch: git dc staging..master
+  dc = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+  # show branches that contain a given commit: git bc <commit>
+  bc = branch --contains
