@@ -1,0 +1,6 @@
+#!/bin/bash
+if [[ $# -eq 0 ]] ; then
+  echo 'usage: git-export <sha>'
+  exit 1
+fi
+cd "$(pwd)" && git lf $1 | xargs tar -rf $1.tar
