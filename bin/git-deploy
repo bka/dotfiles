@@ -1,0 +1,175 @@
+#!/usr/bin/ruby
+require 'rubygems'
+require 'pry'
+require 'open3'
+require 'colorize'
+require 'thor'
+require 'yaml'
+require 'pry'
+
+#########################################################
+# * simple script to deploy files affected by a git commit 
+#   to remote machines, e.g.:
+#
+# git-deploy production 5df1428 --dry
+# git-deploy production 5df1428
+# git-deploy staging 5df1428 --v
+#
+# * host and destination paths specified in a .deploy.yml
+# * created backup of files inside a .backup dir
+# 
+# ~ bka
+#########################################################
+
+class ConfigFile
+  def initialize
+    raise ".deploy.yml does not exist. use git-deploy init" unless File.exists?(".deploy.yml")
+    @config = YAML.load_file('.deploy.yml')
+  end
+
+  def get(target)
+    raise "config key #{target} not found" unless @config[target]
+    @config[target]
+  end
+end
+
+class Deployer
+  attr_accessor :timestamp
+  attr_accessor :verbose
+  attr_accessor :target
+  attr_accessor :dry_run
+
+  def initialize(config)
+    @timestamp = Time.now.to_i
+    @verbose = false
+    @dry_run = false
+    @config = config
+    Dir.mkdir('.backup') unless File.exists?('.backup')
+  end
+
+  def exec cmd
+    puts cmd.blue if @verbose
+    return if @dry_run
+    Open3.popen3(cmd) do |stdin, stdout, stderr, wait_thr|
+      puts stdout.read.to_s.green if @verbose
+      err = stderr.read.to_s
+      puts err.split("\n").first.red unless err.empty?
+    end
+  end
+
+  def git_command(commit_ids)
+    res = "git diff-tree --no-commit-id"
+    res += " --relative=#{relative_path}" if relative_path
+    res += " -r #{commit_ids}"
+  end
+
+  def filelist(commit_ids)
+    filelist = {}
+
+    git_cmd = git_command(commit_ids)
+    puts git_cmd.blue if @verbose
+
+    res = `#{git_cmd}`
+    res.split("\n").each do |line|
+      match = /:\S+\s\S+\s\S+\s\S+\s([MAD])\s(\S+)/.match(line)
+      # M = modified, A = added, D = deleted
+      filelist[match[2]] = :changed if %w{M A}.member?(match[1])
+      filelist[match[2]] = :deleted if %w{D}.member?(match[1])
+    end
+    filelist
+  end
+
+  def process(commit_ids)
+    files = filelist(commit_ids)
+
+    files.each do |file, status|
+      backup_file(file)
+    end
+
+    files.each do |file, status|
+      delete_file(file) if status == :deleted
+    end
+
+    files.each do |file, status|
+      upload_file(file) if status == :changed
+    end
+  end
+
+  def delete_file(filepath)
+    puts "deleting #{filepath}".blue
+    exec "ssh -t -t #{remote_host} 'rm #{File.join(remote_path, filepath)}'"
+  end
+
+  def backup_file(filepath)
+    puts "backup #{filepath}".yellow
+    exec "rsync --numeric-ids -Ravze ssh #{File.join(ssh_path,filepath)} .backup/#{@timestamp}"
+  end
+
+  def upload_file(filepath)
+    puts "uploading #{filepath}".yellow
+    exec "rsync --numeric-ids -Ravze ssh #{filepath} #{ssh_path}"
+  end
+
+  def ssh_path
+    "#{remote_host}:#{remote_path}"
+  end
+
+  def remote_host
+    @config.get(@target)["host"]
+  end
+
+  def remote_path
+    @config.get(@target)["path"]
+  end
+
+  def relative_path
+    @config.get(@target)["relative_path"]
+  end
+end
+
+class GitDeploy < Thor
+  package_name "git-deploy"
+
+  no_commands do
+    def process(commit_ids, target)
+      deployer = Deployer.new(ConfigFile.new)
+      deployer.verbose = options[:verbose] || options[:dry]
+      deployer.dry_run = options[:dry]      
+      deployer.target = target
+      deployer.process(commit_ids)
+    end
+  end
+
+  desc "staging [COMMIT_IDs]", "deploy to staging"
+  method_option :verbose, :type => :boolean, :aliases => "-v"
+  method_option :dry, :type => :boolean, :aliases => "--dry"
+
+  def staging(commit_ids)
+    process(commit_ids, "staging")
+  end
+
+  desc "production [COMMIT_IDs]", "deploy to production"
+  method_option :verbose, :type => :boolean, :aliases => "-v"
+  method_option :dry, :type => :boolean, :aliases => "--dry"
+
+  def production(commit_ids)
+    process(commit_ids, "production")
+  end
+
+  desc "init", "create config file"
+  def init
+    deploy_file = ".deploy.yml"
+    raise "#{deploy_file} already exists" if File.exists?(deploy_file)
+
+    f = File.new(deploy_file, 'w')
+    f.write (%{production:
+  host: user@host
+  path: /path/to
+staging:
+  host: user2@host2
+  path: /path/to/})
+    f.close
+  end
+end
+
+GitDeploy.start
