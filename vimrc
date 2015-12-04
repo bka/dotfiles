@@ -10,6 +10,7 @@ Plugin 'noah/molokai'
 Plugin 'kien/ctrlp'
 Plugin 'bling/vim-airline'
 Plugin 'bronson/vim-trailing-whitespace'
+Plugin 'scrooloose/nerdtree'
 
 call vundle#end()
 filetype plugin indent on

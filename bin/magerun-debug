@@ -1,0 +1,2 @@
+#!/bin/sh
+XDEBUG_CONFIG="idekey=PHPSTORM" php -dxdebug.remote_host=127.0.0.1 -dxdebug.remote_enable=on -f /usr/bin/magerun $1
