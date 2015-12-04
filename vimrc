@@ -12,6 +12,7 @@ Plugin 'bling/vim-airline'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'scrooloose/nerdtree'
 Plugin 'joonty/vdebug'
+Plugin 'tpope/vim-surround'
 
 call vundle#end()
 filetype plugin indent on
