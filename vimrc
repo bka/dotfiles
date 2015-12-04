@@ -11,6 +11,7 @@ Plugin 'kien/ctrlp'
 Plugin 'bling/vim-airline'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'scrooloose/nerdtree'
+Plugin 'joonty/vdebug'
 
 call vundle#end()
 filetype plugin indent on
@@ -54,6 +55,26 @@ nmap <leader>bq :bp <BAR> bd #<CR>
 "
 " " Show all open buffers and their status
 nmap <leader>bl :ls<CR>
+
+" vdebug config
+
+let g:vdebug_keymap = {
+\    "run" : "<F5>",
+\    "run_to_cursor" : "<F9>",
+\    "step_over" : "<F2>",
+\    "step_into" : "<F3>",
+\    "step_out" : "<F4>",
+\    "close" : "<F6>",
+\    "detach" : "<F7>",
+\    "set_breakpoint" : "<F8>",
+\    "get_context" : "<F11>",
+\    "eval_under_cursor" : "<F12>",
+\    "eval_visual" : "<Leader>e"
+\}
+
+"let g:vdebug_options = {
+"\    "break_on_open" : 0,
+"\}
 
 nnoremap <up> <nop>
 nnoremap <down> <nop>
