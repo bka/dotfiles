@@ -40,8 +40,19 @@ set nowrap " Do wrap
 set autoindent  "Copy indent from previous line
 set smartindent "Do smart indenting when starting a new line
 
+" searching
 set hlsearch  "Highlight matches
 set incsearch  "Incremental searching
+set showmatch
+set ignorecase "ignore case when searching
+set smartcase  "search with case possible
+set gdefault " :%s/foo/bar/g -> :%s/foo/bar/
+"leader + space to clear search
+nnoremap <leader><space> :noh<cr>
+
+" braket switching with tab
+nnoremap <tab> %
+vnoremap <tab> %
 
 " This allows buffers to be hidden if you've modified a buffer.
 " " This is almost a must if you wish to use buffers in this way.
