@@ -184,3 +184,6 @@ zle -N x-kill-region
 bindkey '^x' x-kill-region
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+# rempate esc to capslock
+# dconf write /org/gnome/desktop/input-sources/xkb-options "['caps:escape']"
