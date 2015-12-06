@@ -17,5 +17,16 @@
   bc = branch --contains
   # show conflicts
   conflicts = diff --name-only --diff-filter=U
+	d = difftool
 [push]
   default = current
+[merge]
+	tool = vimdiff
+	conflictstyle = diff3
+[mergetool]
+	prompt = false
+	keepBackup = false
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
