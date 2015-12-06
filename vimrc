@@ -19,6 +19,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'joonty/vdebug'
 Plugin 'tpope/vim-surround'
 Plugin 'mileszs/ack.vim'
+Plugin 'scrooloose/nerdcommenter'
 
 call vundle#end()
 filetype plugin indent on
@@ -93,7 +94,10 @@ let g:vdebug_keymap = {
 let g:vdebug_options = {
 \    "break_on_open" : 0,
 \    "path_maps" : {"/vagrant/src/magento2": "/home/bernd/work/vagrant-lamp/src/magento2"},
-\    "watch_window_style" : "compact"
+\    "watch_window_style" : "compact",
+\    "debug_file" : "~/vdebug.log",
+\    "debug_file_level" : "2",
+\    "timeout" : 300
 \}
 
 nnoremap <up> <nop>
