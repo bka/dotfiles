@@ -1,6 +1,11 @@
 set nocompatible
 filetype off
 
+" security
+set modelines=0
+
+
+
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/vundle
 call vundle#begin()
@@ -13,6 +18,7 @@ Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'scrooloose/nerdtree'
 Plugin 'joonty/vdebug'
 Plugin 'tpope/vim-surround'
+Plugin 'mileszs/ack.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -39,6 +45,17 @@ set incsearch  "Incremental searching
 " This allows buffers to be hidden if you've modified a buffer.
 " " This is almost a must if you wish to use buffers in this way.
 set hidden
+
+set encoding=utf-8
+
+set relativenumber
+
+au FocusLost * :wa
+set undodir=~/tmp/vim/undo//
+set backupdir=~/tmp/vim/backup//
+set directory=~/tmp/vim/swap//
+set backup
+set noswapfile
 
 " " To open a new empty buffer
 " " This replaces :tabnew which I used to bind to this mapping
@@ -73,13 +90,19 @@ let g:vdebug_keymap = {
 \    "eval_visual" : "<Leader>e"
 \}
 
-"let g:vdebug_options = {
-"\    "break_on_open" : 0,
-"\}
+let g:vdebug_options = {
+\    "break_on_open" : 0,
+\    "path_maps" : {"/vagrant/src/magento2": "/home/bernd/work/vagrant-lamp/src/magento2"},
+\    "watch_window_style" : "compact"
+\}
 
 nnoremap <up> <nop>
 nnoremap <down> <nop>
 nnoremap <left> <nop>
 nnoremap <right> <nop>
+
+inoremap <F1> <ESC>
+nnoremap <F1> <ESC>
+vnoremap <F1> <ESC>
 
 colorscheme molokai
