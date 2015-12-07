@@ -4,8 +4,6 @@ filetype off
 " security
 set modelines=0
 
-
-
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/vundle
 call vundle#begin()
@@ -94,6 +92,10 @@ nmap <leader>bl :ls<CR>
 " trigger SnipMate
 imap <C-k> <esc>a<Plug>snipMateNextOrTrigger
 smap <C-k> <Plug>snipMateNextOrTrigger
+
+" enable pasting - omg this breaks all mappings ;(
+" set paste
+" set pastetoggle=<F10>
 
 let g:snipMate = {}
 let g:snipMate.scope_aliases = {}
