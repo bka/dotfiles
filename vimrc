@@ -21,6 +21,10 @@ Plugin 'tpope/vim-surround'
 Plugin 'mileszs/ack.vim'
 Plugin 'tpope/vim-commentary'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -86,6 +90,21 @@ nmap <leader>bq :bp <BAR> bd #<CR>
 "
 " " Show all open buffers and their status
 nmap <leader>bl :ls<CR>
+
+" trigger SnipMate
+imap <C-k> <esc>a<Plug>snipMateNextOrTrigger
+smap <C-k> <Plug>snipMateNextOrTrigger
+
+let g:snipMate = {}
+let g:snipMate.scope_aliases = {}
+let g:snipMate.scope_aliases['php'] = 'php'
+
+let g:snips_author='Bernhard Katzmarski'
+let g:author='Bernhard Katzmarski'
+let g:snips_email='bkatzmarski@neusta.de'
+let g:email='bkatzmarski@neusta.de'
+let g:snips_github='https://github.com/bka'
+let g:github='https://github.com/bka'
 
 " vdebug config
 
