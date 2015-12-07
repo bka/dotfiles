@@ -19,7 +19,8 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'joonty/vdebug'
 Plugin 'tpope/vim-surround'
 Plugin 'mileszs/ack.vim'
-Plugin 'scrooloose/nerdcommenter'
+Plugin 'tpope/vim-commentary'
+Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()
 filetype plugin indent on
