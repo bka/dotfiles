@@ -162,7 +162,10 @@ let g:vdebug_keymap = {
 
 let g:vdebug_options = {
 \    "break_on_open" : 0,
-\    "path_maps" : {"/vagrant/src/magento2": "/home/bernd/work/vagrant-lamp/src/magento2"},
+\    "path_maps" : {
+\        "/vagrant/src/magento2": "/home/bernd/work/vagrant-lamp/src/magento2",
+\        "/docker/Source": "/home/bkatzmarski/projects/vagrant-docker-vm-webdev/projects/bos/Source"
+\     },
 \    "watch_window_style" : "compact",
 \    "debug_file" : "~/vdebug.log",
 \    "debug_file_level" : "2",
