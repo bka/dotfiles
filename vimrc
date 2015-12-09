@@ -50,12 +50,9 @@ set showmatch
 set ignorecase "ignore case when searching
 set smartcase  "search with case possible
 set gdefault " :%s/foo/bar/g -> :%s/foo/bar/
+
 "leader + space to clear search
 nnoremap <leader><space> :noh<cr>
-
-" braket switching with tab
-nnoremap <tab> %
-vnoremap <tab> %
 
 " This allows buffers to be hidden if you've modified a buffer.
 " " This is almost a must if you wish to use buffers in this way.
@@ -72,22 +69,29 @@ set directory=~/tmp/vim/swap//
 set backup
 set noswapfile
 
-" " To open a new empty buffer
-" " This replaces :tabnew which I used to bind to this mapping
-nmap <leader>T :enew<cr>
-"
-" " Move to the next buffer
-map <leader>l :bnext<CR>
-"
-" " Move to the previous buffer
-nmap <leader>h :bprevious<CR>
-"
-" " Close the current buffer and move to the previous one
-" " This replicates the idea of closing a tab
-nmap <leader>bq :bp <BAR> bd #<CR>
-"
-" " Show all open buffers and their status
-nmap <leader>bl :ls<CR>
+" To open a new empty buffer
+" This replaces :tabnew which I used to bind to this mapping
+nmap <C-t> :enew<cr>
+
+" Move to the next buffer
+map <C-i> :bnext<CR>
+
+" Move to the previous buffer
+" exe 'set t_kB=' . nr2char(27) . '[Z'
+map <S-Tab> :bprevious<CR>
+
+" Close the current buffer and move to the previous one
+" This replicates the idea of closing a tab
+nmap <C-x> :bp <BAR> bd #<CR>
+
+" Move to previous edited buffer
+map <C-z> :e#<CR>
+
+" map crtl-movement key
+map <C-k> <C-w><Up>
+map <C-j> <C-w><Down>
+map <C-l> <C-w><Right>
+map <C-h> <C-w><Left>
 
 " trigger SnipMate
 imap <C-k> <esc>a<Plug>snipMateNextOrTrigger
