@@ -80,9 +80,12 @@ map <C-i> :bnext<CR>
 " exe 'set t_kB=' . nr2char(27) . '[Z'
 map <S-Tab> :bprevious<CR>
 
-" Close the current buffer and move to the previous one
-" This replicates the idea of closing a tab
+" close current buffer CTRL+x
 nmap <C-x> :bp <BAR> bd #<CR>
+
+" close current split pane with ALT+q
+execute "set <M-q>=\eq"
+map <M-q> :q<CR>
 
 " Move to previous edited buffer
 map <C-z> :e#<CR>
