@@ -23,6 +23,7 @@ Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
+Plugin 'easymotion/vim-easymotion'
 
 call vundle#end()
 filetype plugin indent on
@@ -119,6 +120,13 @@ let g:snips_email='bkatzmarski@neusta.de'
 let g:email='bkatzmarski@neusta.de'
 let g:snips_github='https://github.com/bka'
 let g:github='https://github.com/bka'
+
+
+" Easy Motion Config
+let g:EasyMotion_do_mapping = 0 " Disable default mappings
+nmap s <Plug>(easymotion-s)
+" Turn on case insensitive feature
+" let g:EasyMotion_smartcase = 1
 
 " vdebug config
 
