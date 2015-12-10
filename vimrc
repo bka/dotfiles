@@ -100,6 +100,11 @@ map <C-h> <C-w><Left>
 imap <C-k> <esc>a<Plug>snipMateNextOrTrigger
 smap <C-k> <Plug>snipMateNextOrTrigger
 
+" trigger save with CTRL+s
+nmap <c-s> :w<CR>
+vmap <c-s> <Esc><c-s>gv
+imap <c-s> <Esc><c-s>
+
 " enable pasting - omg this breaks all mappings ;(
 " set paste
 " set pastetoggle=<F10>

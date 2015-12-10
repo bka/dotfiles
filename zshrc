@@ -88,7 +88,8 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# make END and POS1 work again
+# enable CTRL+s usage for vim
+stty -ixon
 
 # key bindings
 bindkey "\e[1~" beginning-of-line
