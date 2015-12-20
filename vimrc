@@ -24,6 +24,7 @@ Plugin 'honza/vim-snippets'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'easymotion/vim-easymotion'
+Plugin 'svermeulen/vim-easyclip'
 
 call vundle#end()
 filetype plugin indent on
@@ -127,6 +128,21 @@ let g:EasyMotion_do_mapping = 0 " Disable default mappings
 nmap s <Plug>(easymotion-s)
 " Turn on case insensitive feature
 " let g:EasyMotion_smartcase = 1
+
+" easyclip config
+" let g:EasyClipAutoFormat = 1
+let g:EasyClipAlwaysMoveCursorToEndOfPaste = 1
+let g:EasyClipShareYanks = 1
+
+let g:EasyClipUsePasteToggleDefaults = 0
+nmap <c-f> <plug>EasyClipRotateYanksForward
+nmap <c-d> <plug>EasyClipRotateYanksBackward
+
+nmap <silent> gs <plug>SubstituteOverMotionMap
+nmap gss <plug>SubstituteLine
+xmap gs <plug>XEasyClipPaste
+
+nnoremap gm m
 
 " vdebug config
 
