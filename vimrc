@@ -30,7 +30,7 @@ call vundle#end()
 filetype plugin indent on
 
 :set nu
-let mapleader=","
+let mapleader=" "
 :set expandtab ts=2 sw=2 ai
 autocmd BufWritePre * :%s/\s\+$//e
 
@@ -97,6 +97,12 @@ map <C-k> <C-w><Up>
 map <C-j> <C-w><Down>
 map <C-l> <C-w><Right>
 map <C-h> <C-w><Left>
+
+" NerdTree Toggle
+nmap <silent> <leader><tab> :NERDTreeToggle<CR>
+
+" highlight current buffer in NERDTREE
+map <leader>r :NERDTreeFind<CR>
 
 " trigger SnipMate
 imap <C-k> <esc>a<Plug>snipMateNextOrTrigger
