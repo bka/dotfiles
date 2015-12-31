@@ -137,6 +137,7 @@ nmap s <Plug>(easymotion-s)
 
 " easyclip config
 " let g:EasyClipAutoFormat = 1
+set clipboard=unnamedplus
 let g:EasyClipAlwaysMoveCursorToEndOfPaste = 1
 let g:EasyClipShareYanks = 1
 
