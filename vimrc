@@ -31,8 +31,15 @@ filetype plugin indent on
 
 :set nu
 let mapleader=" "
-:set expandtab ts=2 sw=2 ai
+" :set expandtab ts=2 sw=2 ai
 autocmd BufWritePre * :%s/\s\+$//e
+
+set shiftwidth=2
+set softtabstop=2
+set tabstop=2
+
+" for php files 4 spaces
+autocmd Filetype php setlocal ts=4 sw=4 sts=0 expandtab
 
 " Enable the list of buffers
 let g:airline#extensions#tabline#enabled = 1
