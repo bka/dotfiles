@@ -29,6 +29,9 @@ Plugin 'svermeulen/vim-easyclip'
 call vundle#end()
 filetype plugin indent on
 
+Bundle 'tobyS/vmustache'
+Bundle 'tobyS/pdv'
+
 :set nu
 let mapleader=" "
 " :set expandtab ts=2 sw=2 ai
@@ -158,6 +161,10 @@ xmap gs <plug>XEasyClipPaste
 
 nnoremap gm m
 
+" PDV
+let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates"
+" nnoremap <buffer> <leader>m :call pdv#DocumentCurrentLine()<CR>
+nmap <leader>c :call pdv#DocumentCurrentLine()<CR>
 " vdebug config
 
 let g:vdebug_keymap = {
