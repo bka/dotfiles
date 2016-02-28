@@ -18,13 +18,15 @@ Plugin 'joonty/vdebug'
 Plugin 'tpope/vim-surround'
 Plugin 'mileszs/ack.vim'
 Plugin 'tpope/vim-commentary'
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'svermeulen/vim-easyclip'
+Plugin 'ervandew/supertab'
+Plugin 'shawncplus/phpcomplete.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -34,15 +36,18 @@ Bundle 'tobyS/pdv'
 
 :set nu
 let mapleader=" "
-" :set expandtab ts=2 sw=2 ai
+:set expandtab ts=2 sw=2 ai
 autocmd BufWritePre * :%s/\s\+$//e
 
-set shiftwidth=2
-set softtabstop=2
-set tabstop=2
+" set shiftwidth=2
+" set softtabstop=2
+" set tabstop=2
 
 " for php files 4 spaces
 autocmd Filetype php setlocal ts=4 sw=4 sts=0 expandtab
+
+" for ruby files 2 spaces
+autocmd Filetype rb setlocal ts=2 sw=2 sts=0 expandtab
 
 " Enable the list of buffers
 let g:airline#extensions#tabline#enabled = 1
@@ -203,3 +208,14 @@ nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 
 colorscheme molokai
+
+" highlight Normal term=none cterm=none ctermfg=White ctermbg=Black gui=none guifg=White guibg=Black
+" highlight DiffChange cterm=none ctermfg=black ctermbg=LightGreen gui=none guifg=bg guibg=LightGreen
+" highlight DiffText cterm=none ctermfg=black ctermbg=LightRed gui=none guifg=bg guibg=Red
+
+" Autocomplete for php
+autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
+
+set completeopt=longest,menuone
+
+let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
