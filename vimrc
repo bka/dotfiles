@@ -18,8 +18,7 @@ Plugin 'joonty/vdebug'
 Plugin 'tpope/vim-surround'
 Plugin 'mileszs/ack.vim'
 Plugin 'tpope/vim-commentary'
-"Plugin 'Valloric/YouCompleteMe'
-Plugin 'garbas/vim-snipmate'
+Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
@@ -220,3 +219,19 @@ autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
 set completeopt=longest,menuone
 
 let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
+
+" Ultisnip Config
+" Trigger configuration. Do not use <tab> if you use
+" https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+" let g:UltiSnipsJumpForwardTrigger="<c-b>"
+" let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+"
+" " If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+
+" phpqa
+" https://github.com/joonty/vim-phpqa
+" <Leader>qa  " Show/hide code sniffer and mess detector violations
+" <Leader>qc  " Show/hide code coverage markers
+let g:phpqa_codesniffer_args = "--standard=PSR2"
