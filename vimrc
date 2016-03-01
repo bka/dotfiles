@@ -27,6 +27,7 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'svermeulen/vim-easyclip'
 Plugin 'ervandew/supertab'
 Plugin 'shawncplus/phpcomplete.vim'
+Plugin 'joonty/vim-phpqa.git'
 
 call vundle#end()
 filetype plugin indent on
