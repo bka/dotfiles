@@ -1,0 +1,12 @@
+snippet mb "Mockbuilder"
+$this->$1 = $this->getMockBuilder('$2')
+    ->disableOriginalConstructor()
+    ->setMethods([
+        '$3'
+    ])
+    ->getMock();
+endsnippet
+
+snippet mrs "Method Return Self"
+$this->$1->method('$2')->willReturnSelf();
+endsnippet
