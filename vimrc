@@ -235,3 +235,4 @@ let g:UltiSnipsEditSplit="vertical"
 " <Leader>qa  " Show/hide code sniffer and mess detector violations
 " <Leader>qc  " Show/hide code coverage markers
 let g:phpqa_codesniffer_args = "--standard=PSR2"
+let g:phpqa_messdetector_ruleset = "~/.vim/php/phpmd-ruleset.xml"
