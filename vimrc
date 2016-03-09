@@ -71,6 +71,9 @@ set gdefault " :%s/foo/bar/g -> :%s/foo/bar/
 "leader + space to clear search
 nnoremap <leader><space> :noh<cr>
 
+" map jj to esc
+imap jj <Esc>
+
 " This allows buffers to be hidden if you've modified a buffer.
 " " This is almost a must if you wish to use buffers in this way.
 set hidden
