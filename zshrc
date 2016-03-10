@@ -50,7 +50,23 @@ export AUTO_TITLE=false
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git extract)
+plugins=(
+  git
+  extract
+  copydir
+  copyfile
+  docker
+  docker-compose
+  git
+  git-flow
+  history
+  jsontools
+)
+
+# for copydir and copyfile to work
+# sudo apt-get install xsel
+alias pbcopy='xsel --clipboard --input'
+alias pbpaste='xsel --clipboard --output'
 
 # User configuration
 
