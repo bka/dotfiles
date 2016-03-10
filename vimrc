@@ -239,3 +239,6 @@ let g:UltiSnipsEditSplit="vertical"
 " <Leader>qc  " Show/hide code coverage markers
 let g:phpqa_codesniffer_args = "--standard=PSR2"
 let g:phpqa_messdetector_ruleset = "~/.vim/php/phpmd-ruleset.xml"
+
+" autogenerate tag file
+au BufWritePost *.php silent! !ctags -R --fields=+aimS --languages=php &
