@@ -9,6 +9,7 @@
 	b = branch
   l = log --pretty=oneline -n 20 --graph --abbrev-commit
   la = log --oneline --graph --decorate --all
+  ll = log --oneline --graph  --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %an: %s %Cgreen(%cr)%Creset' --decorate --all
   # list files of commit
   lf = diff-tree --no-commit-id --name-only -r --diff-filter=ACMRT
   # different commits in branch: git dc staging..master
@@ -30,3 +31,5 @@
 	tool = vimdiff
 [difftool]
 	prompt = false
+[pull]
+	rebase = true

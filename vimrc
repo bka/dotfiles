@@ -45,6 +45,8 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 " for php files 4 spaces
 autocmd Filetype php setlocal ts=4 sw=4 sts=0 expandtab
+" for xml files 4 spaces
+autocmd Filetype xml setlocal ts=4 sw=4 sts=0 expandtab
 
 " for ruby files 2 spaces
 autocmd Filetype rb setlocal ts=2 sw=2 sts=0 expandtab
@@ -192,8 +194,6 @@ let g:vdebug_keymap = {
 let g:vdebug_options = {
 \    "break_on_open" : 0,
 \    "path_maps" : {
-\        "/vagrant/src/magento2": "/home/bernd/work/vagrant-lamp/src/magento2",
-\        "/docker/Source": "/home/bkatzmarski/projects/vagrant-docker-vm-webdev/projects/bos/Source"
 \     },
 \    "watch_window_style" : "compact",
 \    "debug_file" : "~/vdebug.log",
@@ -241,4 +241,9 @@ let g:phpqa_codesniffer_args = "--standard=PSR2"
 let g:phpqa_messdetector_ruleset = "~/.vim/php/phpmd-ruleset.xml"
 
 " autogenerate tag file
-au BufWritePost *.php silent! !ctags -R --fields=+aimS --languages=php &
+" au BufWritePost *.php silent! !ctags -R --fields=+aimS --languages=php --exclude=var --exclude=pub &
+" au BufWritePost *.md silent! !rake &
+
+" allow per project vimrc
+set exrc
+set secure
