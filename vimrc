@@ -120,6 +120,12 @@ map <C-j> <C-w><Down>
 map <C-l> <C-w><Right>
 map <C-h> <C-w><Left>
 
+" Use Arrow Keyz to resize window
+noremap <up>    <C-W>+
+noremap <down>  <C-W>-
+noremap <left>  3<C-W><
+noremap <right> 3<C-W>>
+
 " NerdTree Toggle
 nmap <silent> <leader><tab> :NERDTreeToggle<CR>
 
@@ -202,11 +208,6 @@ let g:vdebug_options = {
 \    "debug_file_level" : "2",
 \    "timeout" : 300
 \}
-
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
 
 inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
