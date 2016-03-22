@@ -240,10 +240,11 @@ let g:UltiSnipsEditSplit="vertical"
 let g:phpqa_codesniffer_args = "--standard=PSR2"
 let g:phpqa_messdetector_ruleset = "~/.vim/php/phpmd-ruleset.xml"
 
-" autogenerate tag file
-" au BufWritePost *.php silent! !ctags -R --fields=+aimS --languages=php --exclude=var --exclude=pub &
-" au BufWritePost *.md silent! !rake &
-
 " allow per project vimrc
 set exrc
 set secure
+
+" autogenerate tag file
+au BufWritePost *.php silent! !ctags -R --fields=+aimS --languages=php --exclude=var --exclude=pub &
+
+" au BufWritePost *.md silent! !rake &
