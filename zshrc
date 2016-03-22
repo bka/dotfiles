@@ -207,3 +207,5 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 # include z.sh
 . ~/bin/z.sh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

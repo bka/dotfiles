@@ -10,7 +10,6 @@ call vundle#begin()
 
 Plugin 'VundleVim/vundle'
 Plugin 'noah/molokai'
-Plugin 'kien/ctrlp'
 Plugin 'bling/vim-airline'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'scrooloose/nerdtree'
@@ -27,6 +26,8 @@ Plugin 'svermeulen/vim-easyclip'
 Plugin 'ervandew/supertab'
 Plugin 'shawncplus/phpcomplete.vim'
 Plugin 'joonty/vim-phpqa.git'
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -243,6 +244,9 @@ let g:phpqa_messdetector_ruleset = "~/.vim/php/phpmd-ruleset.xml"
 " allow per project vimrc
 set exrc
 set secure
+
+" FZF as CTRL-P Replacement
+nmap <C-p> :FZF<CR>
 
 " autogenerate tag file
 au BufWritePost *.php silent! !ctags -R --fields=+aimS --languages=php --exclude=var --exclude=pub &
