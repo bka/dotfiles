@@ -251,6 +251,17 @@ set secure
 " FZF as CTRL-P Replacement
 nmap <C-p> :FZF<CR>
 
+" Goto Defintion switch default; open first match automatically if there is
+" only one
+" http://stackoverflow.com/questions/7640663/use-tjump-instead-of-tag-vim-on-pressing-ctrl
+nnoremap <c-]> g<c-]>
+vnoremap <c-]> g<c-]>
+nnoremap g<c-]> <c-]>
+vnoremap g<c-]> <c-]>
+
+" goto definition with leader
+nmap <leader>g g<c-]>
+
 " autogenerate tag file
 au BufWritePost *.php silent! !ctags -R --fields=+aimS --languages=php --exclude=var --exclude=pub &
 
