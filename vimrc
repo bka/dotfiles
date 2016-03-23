@@ -29,6 +29,7 @@ Plugin 'joonty/vim-phpqa.git'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 Plugin 'morhetz/gruvbox'
+Plugin 'christoomey/vim-tmux-navigator'
 
 call vundle#end()
 filetype plugin indent on
