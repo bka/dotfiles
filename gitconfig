@@ -19,6 +19,9 @@
   # show conflicts
   conflicts = diff --name-only --diff-filter=U
 	d = difftool
+  c = commit
+  ds = diff --staged
+  a = add
 [push]
   default = current
 [merge]
