@@ -3,10 +3,13 @@
 [core]
 	editor = vim
 [alias]
-	co = checkout
-	p = pull
-	s = status -s
-	b = branch
+  co = checkout
+  p = pull
+  # status only for tracked files as default
+  s = status -suno
+  # extended status also showing untracked files
+  sa = status -s
+  b = branch
   l = log --pretty=oneline -n 20 --graph --abbrev-commit
   la = log --oneline --graph --decorate --all
   ll = log --oneline --graph  --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %an: %s %Cgreen(%cr)%Creset' --decorate --all
@@ -22,6 +25,7 @@
   c = commit
   ds = diff --staged
   a = add
+  # update remote branches
   u = remote update --prune
 [push]
   default = current
