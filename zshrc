@@ -68,6 +68,7 @@ plugins=(
 alias pbcopy='xsel --clipboard --input'
 alias pbpaste='xsel --clipboard --output'
 
+alias c='clear'
 # User configuration
 
 export PATH=$HOME/bin:/usr/local/bin:$PATH
