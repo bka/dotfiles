@@ -172,4 +172,4 @@ bindsym $mod+Left workspace prev
 bindsym $mod+Right workspace next
 
 # lock screen
-bindsym Control+$mod+l exec i3lock
+bindsym Control+$mod+l exec i3lock -c 000000
