@@ -173,3 +173,7 @@ bindsym $mod+Right workspace next
 
 # lock screen
 bindsym Control+$mod+l exec i3lock -c 000000
+
+# go without title bars, dont need them
+for_window [class="^.*"] border pixel 1
+new_window 1pixel
