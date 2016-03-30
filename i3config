@@ -49,10 +49,10 @@ bindsym $mod+l focus up
 bindsym $mod+odiaeresis focus right
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
+# bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+# bindsym $mod+Right focus right
 
 # move focused window
 bindsym $mod+Shift+j move left
@@ -155,5 +155,21 @@ bar {
         status_command i3status
         mode hide
         hidden_state hide
-        modifier Mod1
+        modifier $mod
 }
+### THEME ###
+#
+
+client.background #342826
+# colourclass               border    bckgrnd    text
+# client.focused             #1793D0   #1793D0    #FFFFFF #000000 #000000
+# client.focused_inactive    #000000   #333333    #FFFFFF #000000 #000000
+# client.unfocused           #000000   #333333    #FFFFFF #000000 #000000
+# client.urgent              #FF0000   #FF0000    #FF0000 #000000 #000000
+
+# Use mod-left and right to rotate through the workspace list.
+bindsym $mod+Left workspace prev
+bindsym $mod+Right workspace next
+
+# lock screen
+bindsym Control+$mod+l exec i3lock
