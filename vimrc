@@ -34,6 +34,7 @@ Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 Plugin 'morhetz/gruvbox'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'tpope/vim-dispatch'
 
 call vundle#end()
 filetype plugin indent on
@@ -275,3 +276,11 @@ let g:UltiSnipsEditSplit="vertical"
 " <Leader>qc  " Show/hide code coverage markers
 let g:phpqa_codesniffer_args = "--standard=PSR2"
 let g:phpqa_messdetector_ruleset = "~/.vim/php/phpmd-ruleset.xml"
+
+" ----------------------------------------------------------------------------
+" ack config
+" ----------------------------------------------------------------------------
+" spawn in background, thanks to vim.dispatch
+let g:ack_use_dispatch = 1
+" space+f start project search
+nmap <leader>f :Ack <space>

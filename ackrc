@@ -1,0 +1,5 @@
+--ignore-dir=var
+--ignore-dir=pub
+--ignore-dir=.mage
+--ignore-file=is:tags
+--ignore-file=ext:phar
