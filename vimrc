@@ -182,10 +182,10 @@ let g:snipMate = {}
 let g:snipMate.scope_aliases = {}
 let g:snipMate.scope_aliases['php'] = 'php'
 
-let g:snips_author='Bernhard Katzmarski'
-let g:author='Bernhard Katzmarski'
-let g:snips_email='bkatzmarski@neusta.de'
-let g:email='bkatzmarski@neusta.de'
+let g:snips_author='Bernhard Leers'
+let g:author='Bernhard Leers'
+let g:snips_email='b.leers@neusta.de'
+let g:email='b.leers@neusta.de'
 let g:snips_github='https://github.com/bka'
 let g:github='https://github.com/bka'
 " trigger SnipMate, it also gets trigger on <tab> because of supertab
@@ -203,7 +203,7 @@ nmap s <Plug>(easymotion-s)
 " ----------------------------------------------------------------------------
 set clipboard=unnamedplus
 let g:EasyClipAlwaysMoveCursorToEndOfPaste = 1
-let g:EasyClipShareYanks = 1
+" let g:EasyClipShareYanks = 1
 let g:EasyClipUsePasteToggleDefaults = 0
 nmap <c-f> <plug>EasyClipRotateYanksForward
 nmap <c-d> <plug>EasyClipRotateYanksBackward
