@@ -35,6 +35,8 @@ Plugin 'junegunn/fzf.vim'
 Plugin 'morhetz/gruvbox'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'tpope/vim-dispatch'
+Plugin 'tpope/vim-fugitive'
+Plugin 'int3/vim-extradite'
 
 call vundle#end()
 filetype plugin indent on
