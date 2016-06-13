@@ -19,6 +19,7 @@ Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'scrooloose/nerdtree'
 Plugin 'joonty/vdebug'
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
 Plugin 'mileszs/ack.vim'
 Plugin 'tpope/vim-commentary'
 Plugin 'SirVer/ultisnips'
@@ -106,10 +107,10 @@ nmap <leader>g g<c-]>
 " Goto Defintion switch default; open first match automatically if there is
 " only one
 " http://stackoverflow.com/questions/7640663/use-tjump-instead-of-tag-vim-on-pressing-ctrl
-nnoremap <c-]> g<c-]>
-vnoremap <c-]> g<c-]>
-nnoremap g<c-]> <c-]>
-vnoremap g<c-]> <c-]>
+" nnoremap <c-]> g<c-]>
+" vnoremap <c-]> g<c-]>
+" nnoremap g<c-]> <c-]>
+" vnoremap g<c-]> <c-]>
 
 " FZF as CTRL-P replacement: so used to Ctrl+P, so open FZF instead
 nmap <C-p> :FZF<CR>
@@ -286,3 +287,5 @@ let g:phpqa_messdetector_ruleset = "~/.vim/php/phpmd-ruleset.xml"
 let g:ack_use_dispatch = 1
 " space+f start project search
 nmap <leader>f :Ack <space>
+" find word under cursor
+noremap <Leader>F :Ack <cword><cr>
