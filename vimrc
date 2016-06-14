@@ -38,6 +38,7 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'tpope/vim-dispatch'
 Plugin 'tpope/vim-fugitive'
 Plugin 'int3/vim-extradite'
+Plugin 'stephpy/vim-php-cs-fixer'
 
 call vundle#end()
 filetype plugin indent on
@@ -279,6 +280,16 @@ let g:UltiSnipsEditSplit="vertical"
 " <Leader>qc  " Show/hide code coverage markers
 let g:phpqa_codesniffer_args = "--standard=PSR2"
 let g:phpqa_messdetector_ruleset = "~/.vim/php/phpmd-ruleset.xml"
+
+" ----------------------------------------------------------------------------
+" Vim-php-cs-fixer
+" https://github.com/stephpy/vim-php-cs-fixer
+" ----------------------------------------------------------------------------
+let g:php_cs_fixer_level = "psr2"              " which level ?
+let g:php_cs_fixer_fixers_list = "unused_use"  " fixers
+
+" <Leader>1 for fixing current file
+nnoremap <silent><leader>1 :call PhpCsFixerFixFile()<CR><CR>
 
 " ----------------------------------------------------------------------------
 " ack config
