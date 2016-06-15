@@ -1,6 +1,5 @@
 #!/bin/bash
 ############################
-# .make.sh
 # This script creates symlinks from the home directory to any desired dotfiles in ~/dotfiles
 ############################
 
@@ -31,3 +30,6 @@ for file in $files; do
 done
 
 ln -sf $dir/bka.zsh-theme ~/.oh-my-zsh/themes/bka.zsh-theme
+
+# ln -s ~/dotfiles/i3config ~/.config/i3/config
+ln -s /home/bernd/dotfiles/ackrc /home/bernd/.ackrc
