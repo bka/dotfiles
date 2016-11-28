@@ -49,6 +49,11 @@ Bundle 'tobyS/pdv'
 " ----------------------------------------------------------------------------
 " Basic stuff
 " ----------------------------------------------------------------------------
+" Disable ex mode
+
+map q: <Nop>
+map Q <Nop>
+
 " security
 set modelines=0
 " this allows buffers to be hidden if you've modified a buffer.
