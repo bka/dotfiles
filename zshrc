@@ -106,6 +106,12 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# Use ctrl-e to edit current command in vim buffer, nice :)
+# http://nuclearsquid.com/writings/edit-long-commands/
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey '^e' edit-command-line
+
 # enable CTRL+s usage for vim
 stty -ixon
 
