@@ -184,9 +184,10 @@ nmap <c-s> :w<CR>
 vmap <c-s> <Esc><c-s>gv
 imap <c-s> <Esc><c-s>
 
-" save and exit shortcut
-nmap <c-S> :wq!<CR>
-
+" save and exit shortcut with CTRL+e
+nmap <c-e> :wq!<CR>
+vmap <c-e> <Esc>:wq!<CR>
+imap <c-e> <Esc>:wq!<CR>
 
 " ----------------------------------------------------------------------------
 " SnipMate Config
