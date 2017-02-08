@@ -129,6 +129,11 @@ bindkey "\eOd" emacs-backward-word
 bindkey "\ee[C" forward-word
 bindkey "\ee[D" backward-word
 bindkey "\^H" backward-delete-word
+
+# move history with alt+k | alt+j
+bindkey "^[k" up-line-or-search
+bindkey "^[j" down-line-or-search
+
 # for rxvt
 bindkey "\e[8~" end-of-line
 bindkey "\e[7~" beginning-of-line
