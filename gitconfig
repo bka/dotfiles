@@ -11,7 +11,7 @@
   sa = status -s
   b = branch
   l = log --pretty=oneline -n 20 --graph --abbrev-commit
-  la = log --oneline --graph --decorate --all
+  la = log --oneline --graph --decorate --branches --remotes --tags
   ll = log --oneline --graph  --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %an: %s %Cgreen(%cr)%Creset' --decorate --all
   # list files of commit
   lf = diff-tree --no-commit-id --name-only -r --diff-filter=ACMRT
