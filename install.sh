@@ -9,6 +9,7 @@ dir=~/dotfiles                                 # dotfiles directory
 olddir=~/dotfiles_old                          # old dotfiles backup directory
 files="vimrc vim zshrc oh-my-zsh tmux.conf gitconfig"    # list of files/folders to symlink in homedir
 user="$(whoami)" # your current user
+git clone https://github.com/morhetz/gruvbox.git ~/.vim/bundle/gruvbox # install gruvbox
 
 ##########
 
