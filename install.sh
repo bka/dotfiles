@@ -8,6 +8,8 @@
 dir=~/dotfiles                                 # dotfiles directory
 olddir=~/dotfiles_old                          # old dotfiles backup directory
 files="vimrc vim zshrc oh-my-zsh tmux.conf gitconfig"    # list of files/folders to symlink in homedir
+user="$(whoami)" # your current user
+git clone https://github.com/morhetz/gruvbox.git ~/.vim/bundle/gruvbox # install gruvbox
 
 ##########
 
@@ -32,4 +34,4 @@ done
 ln -sf $dir/bka.zsh-theme ~/.oh-my-zsh/themes/bka.zsh-theme
 
 # ln -s ~/dotfiles/i3config ~/.config/i3/config
-ln -s /home/bernd/dotfiles/ackrc /home/bernd/.ackrc
+ln -s /home/bernd/dotfiles/ackrc /home/$user/.ackrc
