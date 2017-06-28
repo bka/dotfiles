@@ -35,3 +35,7 @@ ln -sf $dir/bka.zsh-theme ~/.oh-my-zsh/themes/bka.zsh-theme
 
 # ln -s ~/dotfiles/i3config ~/.config/i3/config
 ln -s /home/bernd/dotfiles/ackrc /home/$user/.ackrc
+
+mkdir -p ~/tmp/vim/undo
+mkdir -p ~/tmp/vim/backup
+mkdir -p ~/tmp/vim/swap

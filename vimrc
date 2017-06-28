@@ -256,7 +256,8 @@ let g:vdebug_options = {
 \    "watch_window_style" : "compact",
 \    "debug_file" : "~/vdebug.log",
 \    "debug_file_level" : "2",
-\    "timeout" : 300
+\    "timeout" : 300,
+\    "continuous_mode" : 1
 \}
 
 " ----------------------------------------------------------------------------

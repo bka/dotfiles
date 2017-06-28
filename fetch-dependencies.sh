@@ -3,6 +3,7 @@
 # sudo apt-get install curl
 # sudo apt-get install vim-gtk
 # sudo apt-get install ack-grep
+# sudo apt-get install vim-nox
 
 # git submodule init
 # git submodule update
