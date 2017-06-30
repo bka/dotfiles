@@ -27,6 +27,7 @@
   a = add
   # update remote branches
   u = remote update --prune
+  drb = push origin --delete
 [push]
   default = current
 [merge]

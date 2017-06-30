@@ -4,6 +4,7 @@
 # sudo apt-get install vim-gtk
 # sudo apt-get install ack-grep
 # sudo apt-get install vim-nox
+# sudo apt-get install xclip
 
 # git submodule init
 # git submodule update
