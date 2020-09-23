@@ -218,7 +218,4 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 # rempate esc to capslock
 # dconf write /org/gnome/desktop/input-sources/xkb-options "['caps:escape']"
 
-# include z.sh
-. ~/bin/z.sh
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

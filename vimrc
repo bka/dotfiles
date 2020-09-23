@@ -311,3 +311,12 @@ let g:ack_use_dispatch = 1
 nmap <leader>f :Ack <space>
 " find word under cursor
 noremap <Leader>F :Ack <cword><cr>
+
+
+if version > 580
+    if exists("syntax_on")
+        syntax on
+    endif
+endif
+
+syntax on
