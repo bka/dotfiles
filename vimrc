@@ -39,6 +39,7 @@ Plugin 'tpope/vim-dispatch'
 Plugin 'tpope/vim-fugitive'
 Plugin 'int3/vim-extradite'
 Plugin 'stephpy/vim-php-cs-fixer'
+Plugin 'junegunn/vim-easy-align'
 
 call vundle#end()
 filetype plugin indent on
@@ -89,7 +90,7 @@ autocmd Filetype xml setlocal ts=4 sw=4 sts=0 expandtab
 " for ruby files 2 spaces
 autocmd Filetype rb setlocal ts=2 sw=2 sts=0 expandtab
 " autogenerate tag file when saving
-au BufWritePost *.php silent! !ctags -R --fields=+aimS --languages=php --exclude=var --exclude=pub &
+" au BufWritePost *.php silent! !ctags -R --fields=+aimS --languages=php --exclude=var --exclude=pub &
 
 " styling
 colorscheme gruvbox
@@ -312,6 +313,11 @@ nmap <leader>f :Ack <space>
 " find word under cursor
 noremap <Leader>F :Ack <cword><cr>
 
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
 
 if version > 580
     if exists("syntax_on")

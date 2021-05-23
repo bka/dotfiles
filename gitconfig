@@ -19,7 +19,7 @@
   # different commits in branch: git dc staging..master
   dc = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
   # show branches that contain a given commit: git bc <commit>
-  bc = branch --contains
+  bc = branch -r --contains
   # show conflicts
   conflicts = diff --name-only --diff-filter=U
 	d = difftool
@@ -28,7 +28,10 @@
   a = add
   # update remote branches
   u = remote update --prune
+  # delete remote branch
   drb = push origin --delete
+  # list merged remote branches
+  lmrb = branch -r --merged
 [push]
   default = current
 [merge]
